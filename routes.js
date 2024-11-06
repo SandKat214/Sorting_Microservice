@@ -1,7 +1,7 @@
 const express = require("express")
 
 const router = express.Router()
-const { ascCompare, descCompare } = require("./utils")
+const { ascCompare, descCompare } = require("./utils/compares")
 
 router.post("/", (req, res) => {
 	try {
@@ -15,15 +15,17 @@ router.post("/", (req, res) => {
 				products.sort((a, b) => descCompare(a, b, index))
 			} else {
 				// order property does not match valid strings
-				console.error("Invalid request from client on order property.")
+				console.log("Invalid request from client on order property.")
 				res.status(400).json({
 					error: "Invalid request from client on order property.",
 				})
 			}
+			// successful operation
+			console.log("Product sort successful.")
 			res.status(200).json(products)
 		} else {
 			// not all products contain the index key
-			console.error("Invalid request from client on index property.")
+			console.log("Invalid request from client on index property.")
 			res.status(400).json({
 				error: "Invalid request from client on index property.",
 			})
