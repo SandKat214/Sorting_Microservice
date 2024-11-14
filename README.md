@@ -1,4 +1,9 @@
 # Sorting Microservice - Communication Contract
+## Setting up the microservice
+1. Clone the microservice locally.
+2. Install the dependencies
+3. Set up a `.env` file
+   * Create variable `PORT`, with local port of your choosing.
 ## How to Programmatically REQUEST data
 The microservice is called via a POST request to the server on which it is listening, via the endpoint: `/api/products-sort/`.
 The body of the request should be sent in JSON format, and contain the following parameters:
