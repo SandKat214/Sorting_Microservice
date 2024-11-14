@@ -108,3 +108,6 @@ const response = await axios.post(`${MS_URL}/api/products-sort/, {
 })
 const sortedArr = response.data
 ```
+
+## UML Sequence Diagram
+![UML](https://github.com/SandKat214/Sorting_Microservice/blob/main/images-readme/sorting_ms_uml.png?raw=true)
