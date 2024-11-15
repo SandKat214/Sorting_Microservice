@@ -18,6 +18,7 @@ The body of the request should be sent in JSON format, and contain the following
    * every object in the array **MUST** contain a property as indicated by **_index_**, otherwise the microservice will respond with a **status of 400** (to indicate a client error) and an error message.
   
 ### Example Calls
+*Example calls written in JavaScript syntax*
 #### Using fetch:
    * `MS_URL` is the url on which the microservice is listening.
 ```
@@ -78,11 +79,12 @@ await axios.post(`${MS_URL}/api/products-sort/, {
 })
 ```
 ## How to Programmatically RECEIVE data
-The response from the microservice will arrive in JSON format and will need to be parsed back into a regular JavaScript array that can then be used programmatically within your code. A successfull response will have a **status of 200** and return the products array sorted by the given property. If an error is encountered, the response will have a **status of 400** (indicating a client error) and return an error message. It is recommended to implement some sort of error handling in your code to account for this possibility.
+The response from the microservice will arrive in JSON format and will need to be parsed back into a regular array, for whatever programming language you are using, that can then be used programmatically within your code. A successfull response will have a **status of 200** and return the products array sorted by the given property. If an error is encountered, the response will have a **status of 400** (indicating a client error) and return an error message. It is recommended to implement some sort of error handling in your code to account for this possibility.
 
-### Example Calls:
+### Example Calls
+*Example calls written in JavaScript syntax*
 #### Using fetch:
-   * the response from the microservice can be caught in stored inside of a variable.
+   * the response from the microservice can be caught and stored inside of a variable.
    * then, `.json()` can be used to parse the response into a JavaScript array.
 ```
 const response = await fetch(`${MS_URL}/api/products-sort/`, {
